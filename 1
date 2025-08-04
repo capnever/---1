@@ -1,0 +1,21 @@
+def sum_negative_between_max_min(arr):
+    if not arr:
+        return 0  # Пустой массив, сумма равна 0
+
+    # Шаг 1: Поиск индексов максимумов и минимумов
+    max_index = arr.index(max(arr))
+    min_index = arr.index(min(arr))
+    
+    # Шаг 2: Определение диапазона
+    start = min(max_index, min_index) + 1
+    end = max(max_index, min_index)
+    
+    # Проверка, есть ли элементы между максимумом и минимумом
+    if start >= end:
+        return 0  # Нет элементов между максимумом и минимумом
+    
+    # Шаг 3: Подсчет суммы отрицательных элементов
+    total = 0
+    for i in range(start, end):
+        if arr[i] < 0:
+            total += arr[i]
