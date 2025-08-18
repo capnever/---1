@@ -1,0 +1,29 @@
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return f"{self.name} издает звук."
+
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)
+        self.breed = breed
+
+    def speak(self):
+        return f"{self.name} (порода: {self.breed}) лает."
+
+
+def main():
+    # Создание экземпляра базового класса
+    animal = Animal("Животное")
+    print(animal.speak())  # Животное издает звук.
+
+    # Создание экземпляра производного класса
+    dog = Dog("Рич", "Тойтерьер")
+    print(dog.speak())  # Рич (порода: Тойтерьер) лает.
+
+
+if __name__ == "__main__":
+    main()
